@@ -1,8 +1,30 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>WhackATroll: Cause trolls are annoying!</title>
+		<title>WhackATroll - Cause trolls are annoying!</title>
+		<script type="text/javascript">
+			function drawPicture(){
+				var canvas = document.getElementById('screen');
+				var context = canvas.getContext('2d');
+
+				context.fillStyle = "rgb(0,255,0)";
+				context.fillRect (25, 25, 100, 100);
+
+				context.fillStyle = "rgba(255,0,0, 0.6)";
+				context.beginPath();
+				context.arc(125,100,50,0,Math.PI*2,true);
+				context.fill();
+
+				context.fillStyle = "rgba(0,0,255,0.6)";
+				context.beginPath();
+				context.moveTo(125,100);
+				context.lineTo(175,50);
+				context.lineTo(225,150);
+				context.fill();
+			}
+		</script>
 	</head>
-	<body>
+	<body onload="drawPicture();">
 		<canvas id="screen" width="1000" height="1000">
 			<div id="txt_no_html5">Your browser does not support HTML5. Go get a better browser and come back!</div>
 		</canvas>
