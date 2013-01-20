@@ -5,6 +5,11 @@ WhackATroll is a simple "whack-a-mole" style game built using HTML5, node.js and
 
 Apparently someone already thought of this idea... [See here](https://itunes.apple.com/us/app/whack-a-troll/id500917075?mt=8). But that doesn't really surprise me! If anything it makes me feel that my silly idea has been validated :)
 
+Dependencies
+===========
+
+On the client side I am using [requirejs](http://requirejs.org/) integrated with [jQuery](http://jquery.com/) v1.8.3
+ 
 Contributors
 ===========
 

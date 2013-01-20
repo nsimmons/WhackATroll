@@ -6,6 +6,7 @@ define('ImageLoader', function() {
 	function ImageLoader() {
 
 		// return singleton instance if already created
+		// Implemented as suggested by: http://code.google.com/p/jslibs/wiki/JavascriptTips#Singleton_pattern
 		if (ImageLoader.prototype._instance) {
 			return ImageLoader.prototype._instance;
 		}
