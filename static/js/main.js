@@ -3,6 +3,7 @@ require(['jquery', 'ImageLoader'], function($, ImageLoader) {
 	var trollfacePath = '/images/trollface_small.jpg';
 	var imageLoader = new ImageLoader();
 	
+	// Coordinates of troll image
 	var trollLocation = {
 		xmin : -1,
 		xmax : -1,
@@ -24,12 +25,25 @@ require(['jquery', 'ImageLoader'], function($, ImageLoader) {
 		var x = Math.floor((e.pageX-$("#screen").offset().left));
 		var y = Math.floor((e.pageY-$("#screen").offset().top));
 		
-		if (trollHit(x,y,trollLocation)) {
+		// if troll was clicked, clear it and re-place
+		if (trollHit(x,y)) {
 			clearTroll();
+			drawSuccess();
 			placeTroll();
 		}
 	}
 	
+	function drawSuccess() {
+		var ctx = $('#screen')[0].getContext('2d');
+		ctx.fillStyle = "green";
+		ctx.fillRect(trollLocation.xmin, 
+					 trollLocation.ymin,
+					 trollLocation.xmax - trollLocation.xmin,
+					 trollLocation.ymax - trollLocation.ymin);
+		
+	}
+	
+	// Returns true if trollface was clicked
 	function trollHit(x, y) {
 		return (x >= trollLocation.xmin && 
 				x <= trollLocation.xmax &&
@@ -37,6 +51,7 @@ require(['jquery', 'ImageLoader'], function($, ImageLoader) {
 				y <= trollLocation.ymax);
 	}
 	
+	// Clears current trollface from canvas
 	function clearTroll() {
 		var ctx = $('#screen')[0].getContext('2d');
 		ctx.clearRect(trollLocation.xmin, trollLocation.ymin, trollLocation.xmax, trollLocation.ymax);
@@ -46,6 +61,7 @@ require(['jquery', 'ImageLoader'], function($, ImageLoader) {
 		placeTroll();
 	}
 	
+	// Places troll randomly on canvas
 	function placeTroll() {
 		// Get trollface image
 		imageLoader.loadImage(trollfacePath, function(imgTroll) {
@@ -66,6 +82,7 @@ require(['jquery', 'ImageLoader'], function($, ImageLoader) {
 			var ctx = jqCanvas[0].getContext('2d');
 			ctx.drawImage(imgTroll, x, y, imgTroll.width, imgTroll.height);
 			
+			// Set new location
 			trollLocation.xmin = x;
 			trollLocation.xmax = x + imgTroll.width;
 			trollLocation.ymin = y;
