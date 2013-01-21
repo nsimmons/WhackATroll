@@ -1,19 +1,35 @@
 Description
 ===========
 
-WhackATroll is a simple "whack-a-mole" style game built using HTML5, node.js and Redis. 
+WhackATroll is a simple "whack-a-mole" style HTML5 game.
 
-Apparently someone already thought of this idea... [See here](https://itunes.apple.com/us/app/whack-a-troll/id500917075?mt=8). But that doesn't really surprise me! If anything it makes me feel that my silly idea has been validated :)
+Apparently someone already thought of this idea... [See here](https://itunes.apple.com/us/app/whack-a-troll/id500917075?mt=8).
+But that doesn't really surprise me! If anything it makes me feel that my silly idea has been validated :)
 
 Dependencies
 ===========
 
-On the client side I am using [requirejs](http://requirejs.org/) integrated with [jQuery](http://jquery.com/) v1.8.3
- 
+Client
+-----------
+- I am using [RequireJS](http://requirejs.org/) integrated with [jQuery](http://jquery.com/) v1.8.3.
+
+Server
+-----------
+- Server is implemented in javascript using [node.js](http://nodejs.org/).
+    - [Express](http://expressjs.com/) framework for MVC style web server.
+    - [Socket.IO](http://socket.io/) for web sockets.
+    - [Node_Redis](https://github.com/mranney/node_redis) driver.
+- Caching is handled by [Redis](http://redis.io/).
+
+Tools
+===========
+
+- IDE: I am using [WebStorm](http://www.jetbrains.com/webstorm/). The only part that isn't free (but soooo worth it).
+
 Contributors
 ===========
 
-Just me (Nick Simmons) so far.
+Just me ([Nick Simmons](https://github.com/nsimmons)).
 
 License
 ===========
