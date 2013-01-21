@@ -2,7 +2,7 @@
 
 define('ImageLoader', function() {
 
-	// ImageLoader is reponsible for loading and caching images
+	// ImageLoader is responsible for loading and caching images
 	function ImageLoader() {
 
 		// return singleton instance if already created
@@ -14,15 +14,17 @@ define('ImageLoader', function() {
 		
 		var images = {};
 		
-		this.setImageObj = function(src, imageObj) {
-			images[src] = imageObj;
-		}
+		this.setImageObj = function (src, imageObj) {
+            images[src] = imageObj;
+        };
 		this.getImageObj = function(src) {
 			return images[src];
-		}
-		this.deleteImageObj = function(src) {
-			delete image[src];
-		}
+		};
+//		this.deleteImageObj = function(src) {
+//			delete image[src];
+//		};
+
+        return this;
 	}
 
 	ImageLoader.prototype.loadImage = function (src, callback) {
@@ -43,7 +45,7 @@ define('ImageLoader', function() {
 		
 		// Not cached, so create a new object in the cache
 		var image = new Image();
-		var imgObj = {
+		imgObj = {
 			img: image,
 			complete: false,
 			callbacks : [callback],
@@ -82,7 +84,7 @@ define('ImageLoader', function() {
 		
 		// Save in image cache for later retrieval
 		this.setImageObj(src, imgObj);
-	}
+	};
 	
 	return ImageLoader;
 });
