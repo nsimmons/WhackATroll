@@ -34,21 +34,29 @@ define('ImageLoader', function() {
 		if (imgObj !== undefined) {
 			// If complete return it immediately
 			if (imgObj.complete) {
-				callback(imgObj.img);
-				return;
+                if (callback !== undefined) {
+                    callback(imgObj.img);
+                }
+				return imgObj.img;
 			}
 			
-			// Otherwise add callback to list
-			imgObj.callbacks.push(callback);
-			return;
+			// Otherwise add callback to list and return null
+            if (callback !== undefined) {
+                imgObj.callbacks.push(callback);
+            }
+			return null;
 		}
 		
 		// Not cached, so create a new object in the cache
 		var image = new Image();
+        var callbacks = [];
+        if (callback !== undefined) {
+            callbacks.push(callback);
+        }
 		imgObj = {
 			img: image,
 			complete: false,
-			callbacks : [callback],
+			callbacks : callbacks,
 			onLoad: function() {
 				this.complete = true;
 				for (var i = 0; i < this.callbacks.length; i++) {
@@ -84,6 +92,8 @@ define('ImageLoader', function() {
 		
 		// Save in image cache for later retrieval
 		this.setImageObj(src, imgObj);
+
+        return null;
 	};
 	
 	return ImageLoader;

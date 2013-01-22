@@ -1,93 +1,91 @@
-require(['jquery', 'ImageLoader'], function($, ImageLoader) {
+require(['jquery', 'ImageLoader', 'Scene', 'object/Troll'], function($, ImageLoader, Scene, Troll) {
 
-	var trollFacePath = '/images/trollface_small.jpg';
+    var fps = 30;
 	var imageLoader = new ImageLoader();
-	
-	// Coordinates of troll image
-	var trollLocation = {
-		xMin : -1,
-		xMax : -1,
-		yMin : -1,
-		yMax : -1
-	};
-	
+    var scene = null;
+    var trollKey = 'troll';
+
 	// Wait for the page to be ready
 	$(document).ready( function() {
-		// Set click event handler on canvas
-		$('#screen').click(onCanvasClicked);
-		
-		// Preload troll image
-		imageLoader.loadImage(trollFacePath, startGame);
+		// Preload resources
+		imageLoader.loadImage('/images/trollface_small.jpg', startGame);
 	});
-	
+
+    function startGame() {
+        // Create the scene
+        scene = new Scene();
+
+        // Set click event handler on canvas
+        $('#screen').click(onCanvasClicked);
+
+        // Place a troll in the scene
+        var troll = new Troll(0,0);
+        scene.addObject(trollKey, troll);
+
+        // Replace it randomly
+        replaceTroll();
+
+        // Start the game loop
+        setInterval(function() {
+            update();
+            draw();
+        }, 1000/fps);
+    }
+
+    function update() {
+    }
+
+    function draw() {
+        // Get canvas dimensions
+        var jqCanvas = $('#screen');
+        var canvasWidth = jqCanvas.attr('width');
+        var canvasHeight = jqCanvas.attr('height');
+
+        // Clear the canvas
+        var ctx = jqCanvas[0].getContext('2d');
+		ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        // Redraw the scene
+        scene.draw(ctx);
+    }
+
+    // Places troll randomly on canvas
+    function replaceTroll() {
+        // Get canvas dimensions
+        var jqCanvas = $('#screen');
+        var canvasWidth = jqCanvas.attr('width');
+        var canvasHeight = jqCanvas.attr('height');
+
+        // Place it randomly in the scene
+        var troll = scene.getObject(trollKey);
+        troll.replace(canvasWidth, canvasHeight);
+    }
+
 	function onCanvasClicked(e) {
 		// Get click location relative to canvas
         var canvasOffset = $("#screen").offset();
         var x = Math.floor((e.pageX-canvasOffset.left));
 		var y = Math.floor((e.pageY-canvasOffset.top));
-		
-		// if troll was clicked, clear it and re-place
-		if (trollHit(x,y)) {
-			clearTroll();
-			drawSuccess();
-			placeTroll();
-		}
+
+        // if troll was not hit, ignore
+        var objectHit = scene.getObjectHit(x, y);
+        if (objectHit !== scene.getObject(trollKey)) {
+            return;
+        }
+
+        // replace the troll
+        replaceTroll();
 	}
 	
-	function drawSuccess() {
-		var ctx = $('#screen')[0].getContext('2d');
-		ctx.fillStyle = "green";
-		ctx.fillRect(trollLocation.xMin,
-					 trollLocation.yMin,
-					 trollLocation.xMax - trollLocation.xMin,
-					 trollLocation.yMax - trollLocation.yMin);
-		
-	}
-	
-	// Returns true if troll face was clicked
-	function trollHit(x, y) {
-		return (x >= trollLocation.xMin &&
-				x <= trollLocation.xMax &&
-				y >= trollLocation.yMin &&
-				y <= trollLocation.yMax);
-	}
-	
-	// Clears current troll face from canvas
-	function clearTroll() {
-		var ctx = $('#screen')[0].getContext('2d');
-		ctx.clearRect(trollLocation.xMin, trollLocation.yMin, trollLocation.xMax, trollLocation.yMax);
-	}
-	
-	function startGame() {
-		placeTroll();
-	}
-	
-	// Places troll randomly on canvas
-	function placeTroll() {
-		// Get troll face image
-		imageLoader.loadImage(trollFacePath, function(imgTroll) {
-		
-			// Get canvas dimensions
-			var jqCanvas = $('#screen');
-			var canvasWidth = jqCanvas.attr('width');
-			var canvasHeight = jqCanvas.attr('height');
-			
-			// Need to make sure image will not be out of canvas boundary
-			var maxX = canvasWidth - imgTroll.width;
-			var x = Math.floor(Math.random() * maxX);
-			var maxY = canvasHeight - imgTroll.height;
-			var y = Math.floor(Math.random() * maxY);
-			
-			// Get context and draw image
-			// Need to use [0] index to access context. See here: http://stackoverflow.com/questions/2925130/jquery-equivalent-of-getting-the-context-of-a-canvas
-			var ctx = jqCanvas[0].getContext('2d');
-			ctx.drawImage(imgTroll, x, y, imgTroll.width, imgTroll.height);
-			
-			// Set new location
-			trollLocation.xMin = x;
-			trollLocation.xMax = x + imgTroll.width;
-			trollLocation.yMin = y;
-			trollLocation.yMax = y + imgTroll.height;
-		});
-	}
+//	function drawSuccess(location) {
+//		var ctx = $('#screen')[0].getContext('2d');
+//		ctx.fillStyle = "green";
+//		ctx.fillRect(location.xMin,
+//            location.yMin,
+//            location.xMax - location.xMin,
+//            location.yMax - location.yMin);
+//
+//	}
+//
+
 });

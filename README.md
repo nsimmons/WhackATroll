@@ -24,7 +24,8 @@ Server
 Tools
 ===========
 
-- IDE: I am using [WebStorm](http://www.jetbrains.com/webstorm/). The only part that isn't free (but soooo worth it).
+- IDE: I am using [WebStorm](http://www.jetbrains.com/webstorm/). Only part that isn't free (but soooo worth it).
+- Testing: [jsTestDriver](http://code.google.com/p/js-test-driver/) integrated with RequireJS is used for running unit tests.
 
 Contributors
 ===========
