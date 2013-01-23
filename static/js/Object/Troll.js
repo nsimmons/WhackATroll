@@ -1,9 +1,11 @@
 
 define(['Vector2', 'ImageLoader'], function(Vector2, ImageLoader) {
 
-    function Troll(x, y) {
+    function Troll(id, x, y, scene) {
+        this.id = id;
+        this.scene = scene;
         this.position = new Vector2(x, y);
-        this.zBuffer = 2;
+        this.zBuffer = 100;
         this.image = null;
 
         // Get troll face image
@@ -13,16 +15,17 @@ define(['Vector2', 'ImageLoader'], function(Vector2, ImageLoader) {
         if (this.image === null) {
             throw { message: "troll face image has not been loaded" };
         }
-
         return this;
     }
+
+    Troll.prototype.update = function() {
+    };
 
     Troll.prototype.draw = function(ctx) {
         ctx.drawImage(this.image, this.position.x, this.position.y, this.image.width, this.image.height);
     };
 
     Troll.prototype.replace = function(canvasWidth, canvasHeight) {
-
         // Need to make sure image will not be out of canvas boundary
         var maxX = canvasWidth - this.image.width;
         var x = Math.floor(Math.random() * maxX);
@@ -39,7 +42,7 @@ define(['Vector2', 'ImageLoader'], function(Vector2, ImageLoader) {
             x <= this.position.x + this.image.width &&
             y >= this.position.y &&
             y <= this.position.y + this.image.height);
-    }
+    };
 
     return Troll;
 });

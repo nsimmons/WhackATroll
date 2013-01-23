@@ -1,4 +1,5 @@
-require(['jquery', 'ImageLoader', 'Scene', 'object/Troll'], function($, ImageLoader, Scene, Troll) {
+require(['jquery', 'ImageLoader', 'Scene', 'object/Troll', 'object/WhackHit', 'util/GuidGenerator', 'lib/async'],
+    function($, ImageLoader, Scene, Troll, WhackHit, GuidGenerator, async) {
 
     var fps = 30;
 	var imageLoader = new ImageLoader();
@@ -7,9 +8,34 @@ require(['jquery', 'ImageLoader', 'Scene', 'object/Troll'], function($, ImageLoa
 
 	// Wait for the page to be ready
 	$(document).ready( function() {
-		// Preload resources
-		imageLoader.loadImage('/images/trollface_small.jpg', startGame);
+        // Initialize game
+        init();
 	});
+
+    function init() {
+        // Preload resources
+        async.parallel([
+            function(callback){
+                imageLoader.loadImage('/images/trollface_small.jpg', function() {
+                    callback(null, '/images/trollface_small.jpg');
+                });
+            },
+            function(callback){
+                imageLoader.loadImage('/images/green_check.jpg', function() {
+                    callback(null, '/images/green_check.jpg');
+                });
+            },
+            function(callback){
+                imageLoader.loadImage('/images/red_x.jpg', function() {
+                    callback(null, '/images/red_x.jpg');
+                });
+            }
+        ],
+        function(err, results){
+            // Start game
+            startGame();
+        });
+    }
 
     function startGame() {
         // Create the scene
@@ -19,7 +45,7 @@ require(['jquery', 'ImageLoader', 'Scene', 'object/Troll'], function($, ImageLoa
         $('#screen').click(onCanvasClicked);
 
         // Place a troll in the scene
-        var troll = new Troll(0,0);
+        var troll = new Troll(trollKey, 0,0, scene);
         scene.addObject(trollKey, troll);
 
         // Replace it randomly
@@ -33,6 +59,8 @@ require(['jquery', 'ImageLoader', 'Scene', 'object/Troll'], function($, ImageLoa
     }
 
     function update() {
+        // Update scene
+        scene.update();
     }
 
     function draw() {
@@ -73,19 +101,13 @@ require(['jquery', 'ImageLoader', 'Scene', 'object/Troll'], function($, ImageLoa
             return;
         }
 
+        // place a WhackHit object on the troll's position
+        var troll = scene.getObject(trollKey);
+        var id = GuidGenerator();
+        var whackHit = new WhackHit(id, troll.position.x, troll.position.y, scene);
+        scene.addObject(id, whackHit);
+
         // replace the troll
         replaceTroll();
 	}
-	
-//	function drawSuccess(location) {
-//		var ctx = $('#screen')[0].getContext('2d');
-//		ctx.fillStyle = "green";
-//		ctx.fillRect(location.xMin,
-//            location.yMin,
-//            location.xMax - location.xMin,
-//            location.yMax - location.yMin);
-//
-//	}
-//
-
 });

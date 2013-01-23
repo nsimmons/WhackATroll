@@ -11,7 +11,10 @@ Dependencies
 
 Client
 -----------
-- I am using [RequireJS](http://requirejs.org/) integrated with [jQuery](http://jquery.com/) v1.8.3.
+I am using the following frameworks and libraries:
+- [RequireJS](http://requirejs.org/)
+- [jQuery](http://jquery.com/) v1.8.3.
+- [async.js](https://github.com/caolan/async)
 
 Server
 -----------
