@@ -7,4 +7,8 @@ var express = require('express');
 exports = module.exports = function(app) {
     // Allows client files to be served by node
     app.use(express.static(__dirname + '/../client'));
+    // Compress responses
+    app.use(express.compress());
+    // Auto parse HTTP body
+    app.use(express.bodyParser());
 };
