@@ -1,32 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3955fb20-0b1b-4fda-8f24-9baa4e3deaa4" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\css\main.css" afterPath="$PROJECT_DIR$/client/css/main.css" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\images\Thumbs.db" afterPath="$PROJECT_DIR$/client/images/Thumbs.db" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\images\green_check.jpg" afterPath="$PROJECT_DIR$/client/images/green_check.jpg" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\images\red_x.jpg" afterPath="$PROJECT_DIR$/client/images/red_x.jpg" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\images\trollface.jpg" afterPath="$PROJECT_DIR$/client/images/trollface.jpg" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\images\trollface_small.jpg" afterPath="$PROJECT_DIR$/client/images/trollface_small.jpg" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\jsTestDriver.conf" afterPath="$PROJECT_DIR$/client/jsTestDriver.conf" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\ImageLoader.js" afterPath="$PROJECT_DIR$/client/js/ImageLoader.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\Object\ImageObject.js" afterPath="$PROJECT_DIR$/client/js/object/ImageObject.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\Object\Troll.js" afterPath="$PROJECT_DIR$/client/js/object/Troll.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\Object\WhackHit.js" afterPath="$PROJECT_DIR$/client/js/object/WhackHit.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\Object\WhackMiss.js" afterPath="$PROJECT_DIR$/client/js/object/WhackMiss.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\Scene.js" afterPath="$PROJECT_DIR$/client/js/Scene.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\Util\GuidGenerator.js" afterPath="$PROJECT_DIR$/client/js/util/GuidGenerator.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\Util\QuickSort.js" afterPath="$PROJECT_DIR$/client/js/util/QuickSort.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\Vector2.js" afterPath="$PROJECT_DIR$/client/js/Vector2.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\lib\async.js" afterPath="$PROJECT_DIR$/client/js/lib/async.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\lib\require-jquery.js" afterPath="$PROJECT_DIR$/client/js/lib/require-jquery.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\js\main.js" afterPath="$PROJECT_DIR$/client/js/main.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\main.html" afterPath="$PROJECT_DIR$/client/main.html" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\test\Util\QuickSortTest.js" afterPath="$PROJECT_DIR$/client/test/util/QuickSortTest.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\test\lib\AMDLoaderPlugin.js" afterPath="$PROJECT_DIR$/client/test/lib/AMDLoaderPlugin.js" />
-      <change type="MOVED" beforePath="C:\Users\user\Documents\GitHub\WhackATroll\static\test\lib\require_config.js" afterPath="$PROJECT_DIR$/client/test/lib/require_config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WhackATroll.iml" afterPath="$PROJECT_DIR$/.idea/WhackATroll.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+    <list default="true" id="3955fb20-0b1b-4fda-8f24-9baa4e3deaa4" name="Default" comment="- Moved static folder to client&#10;                                                          - Preload main.html in server and return it as server root">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controllers/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
     </list>
@@ -49,10 +27,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="22" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/controllers/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="38" selection-end="38" vertical-scroll-proportion="0.09214092">
+            <state line="11" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="0.5067751">
               <folding />
             </state>
           </provider>
@@ -77,9 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/static/test/util/QuickSortTest.js" />
-        <option value="$PROJECT_DIR$/static/js/ImageLoader.js" />
-        <option value="$PROJECT_DIR$/static/js/lib/require-jquery.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/static/js/util/GuidGenerator.js" />
         <option value="$PROJECT_DIR$/static/js/lib/async.js" />
@@ -92,7 +85,10 @@
         <option value="$PROJECT_DIR$/static/js/object/WhackHit.js" />
         <option value="$PROJECT_DIR$/static/js/object/WhackMiss.js" />
         <option value="$PROJECT_DIR$/static/js/object/ImageObject.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/server/controllers/routes.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/server/config.js" />
       </list>
     </option>
   </component>
@@ -147,7 +143,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -176,12 +171,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -199,16 +195,16 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/static/main.html" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="160" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="834" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="834" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="834" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="160" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="159" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig" serverName="WhackATroll" serverId="9a6507d5-1cb3-40c2-8aaf-84c05061a87d">
     <servers>
@@ -242,6 +238,9 @@
       <setting name="preferredDebugBrowser" value="CHROME" />
       <method />
     </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files (x86)/nodejs/node" working-dir="" coffeescript-run="false">
+      <method />
+    </configuration>
     <configuration default="true" type="XSLT" factoryName="XSLT">
       <option name="myOutputFile" />
       <option name="myOpenOutputFile" value="false" />
@@ -256,9 +255,6 @@
       <OutputType value="CONSOLE" save-to-file="false" />
       <FileType name="XML" />
       <JdkChoice value="FROM_MODULE" />
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files (x86)/nodejs/node" working-dir="" coffeescript-run="false">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
@@ -354,7 +350,11 @@
       <created>1358953586802</created>
       <updated>1358953586802</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- Moved static folder to client&#10;- Preload main.html in server and return it as server root">
+      <created>1359034846855</created>
+      <updated>1359034846855</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -383,18 +383,18 @@
     <layout>
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32764506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15636635" sideWeight="0.33390412" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17125838" sideWeight="0.67235494" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39761093" sideWeight="0.49143708" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15636635" sideWeight="0.32534248" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.47952345" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32593855" sideWeight="0.47952345" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.51526433" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6712329" order="2" side_tool="false" content_ui="combo" />
@@ -407,7 +407,7 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <value>
         <are-packages-shown value="false" />
@@ -436,7 +436,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Created ImageObject&#10;- Modified existing game objects to inherit from ImageObject" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Moved static folder to client&#10;- Preload main.html in server and return it as server root" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -454,6 +454,7 @@
     <MESSAGE value="- Implemented a proper game loop&#10;- Added jsTestDriver framework for unit tests" />
     <MESSAGE value="- Added async.js library for pre-loading images&#10;- WhackHit is displayed for a short time after user whacks a troll" />
     <MESSAGE value="- Created ImageObject&#10;- Modified existing game objects to inherit from ImageObject" />
+    <MESSAGE value="- Moved static folder to client&#10;- Preload main.html in server and return it as server root" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -461,41 +462,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/js/Scene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.3262195" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="http://localhost:8080/js/main.js">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/lib/async.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="708" column="0" selection-start="22324" selection-end="22324" vertical-scroll-proportion="0.3030303" />
-      </provider>
-    </entry>
-    <entry file="http://localhost:8080/js/object/WhackHit.js">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="http://localhost:8080/js/object/Troll.js">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="http://localhost:8080/js/object/ImageObject.js">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/object/Troll.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.21212122" />
@@ -523,28 +489,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/jsTestDriver.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="10" selection-start="248" selection-end="248" vertical-scroll-proportion="0.2224299">
-          <folding />
-        </state>
+        <state line="7" column="10" selection-start="248" selection-end="248" vertical-scroll-proportion="0.2224299" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/test/lib/require_config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="19" selection-start="100" selection-end="105" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/redis/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="19" selection-start="35" selection-end="40" vertical-scroll-proportion="0.09550562" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="0" selection-start="1270" selection-end="1270" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="4" selection-start="726" selection-end="822" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="17" selection-start="439" selection-end="439" vertical-scroll-proportion="0.4607046">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="22" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="38" selection-end="38" vertical-scroll-proportion="0.09214092">
+        <state line="11" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="0.5067751">
           <folding />
         </state>
       </provider>

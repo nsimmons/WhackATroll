@@ -1,0 +1,27 @@
+{
+    "name": "whack-a-troll",
+    "version": "0.0.1",
+    "description": "Simple game server demo",
+    "homepage": "https://github.com/nsimmons/WhackATroll",
+    "repository" : { "type" : "git", "url" : "git://github.com/nsimmons/WhackATroll.git" },
+    "author": "Nicholas Simmons <nick.simmons.514@gmail.com>",
+    "contributors": [
+        { "name": "Nicholas Simmons", "email": "nick.simmons.514@gmail.com" }
+    ],
+    "keywords": [
+        "game",
+        "demo",
+        "app"
+    ],
+    "dependencies": {
+        "express": "3.0.6",
+        "redis": "0.8.2",
+        "socket.io": "0.9.13"
+    },
+    "devDependencies": {
+    },
+    "scripts": {
+        "start": "node app.js"
+    },
+    "engines": { "node": "*" }
+}

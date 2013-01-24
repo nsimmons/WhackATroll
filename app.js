@@ -1,20 +1,22 @@
 "use strict";
+
 var fs = require('fs');
-
-// Import modules
 var express = require('express');
-
-var rootHtml = fs.readFileSync('client/main.html');
+var routes = require('./server/controllers/routes.js');
+var config = require('./server/config.js');
 
 // Create HTTP server
 var app = express();
+config(app);
+routes(app);
 
-// Allows client files to be served by node
-app.use(express.static(__dirname + '/client'));
-
+// Cache main HTML page that will be served as directory root
+var rootHtml = fs.readFileSync('client/main.html');
 app.get('/', function(req, res) {
     res.set('Content-Type', 'text/html');
     res.send(rootHtml);
 });
 
-app.listen(8080);
+var port = 8080;
+console.log('app listening on port ' + port);
+app.listen(port);
