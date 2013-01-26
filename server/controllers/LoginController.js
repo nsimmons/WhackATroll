@@ -7,5 +7,7 @@ exports = module.exports = function(app) {
 };
 
 function login(req, res) {
-    res.send({ message: "login!" });
+    req.db.getFields(req.query.player, ['password'], function(err, player) {
+        res.send({ message: "login!", player: player });
+    });
 }
