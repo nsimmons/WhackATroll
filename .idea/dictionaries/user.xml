@@ -6,6 +6,7 @@
       <w>onerror</w>
       <w>onload</w>
       <w>preload</w>
+      <w>redis</w>
     </words>
   </dictionary>
 </component>
