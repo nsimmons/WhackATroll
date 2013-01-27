@@ -5,7 +5,12 @@ var Player = require('../models/Player.js');
 // Registration controller
 exports = module.exports = function(app) {
     app.get('/register', register);
-    app.post('/register', register);
+    app.post('/register', function(req, res) {
+        // Convert body params to query params
+        req.query.player = req.body.player;
+        req.query.password = req.body.password;
+        register(req, res);
+    });
 };
 
 function register(req, res) {

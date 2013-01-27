@@ -5,7 +5,12 @@ var Player = require('../models/Player.js');
 // Login controller
 exports = module.exports = function(app) {
     app.get('/login', login);
-    app.post('/login', login);
+    app.post('/login', function(req, res) {
+        // Convert body params to query params
+        req.query.player = req.body.player;
+        req.query.password = req.body.password;
+        login(req, res);
+    });
 };
 
 function login(req, res) {
