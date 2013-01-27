@@ -28,7 +28,6 @@ function login(req, res) {
                 return res.send(500, { error: err.message });
             }
         }
-
         var responseCode = (req.query.password === player.password) ? 200 : 403;
         return res.send(200, { success: true });
     });

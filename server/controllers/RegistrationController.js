@@ -23,14 +23,14 @@ function register(req, res) {
             req.logger.logException(err);
             return res.send(500, { error: err.message });
         }
-
         // player already exists!
         if (result) {
-            return res.send(200, { exists: true });
+            return res.send(200, { success: false });
         }
-
         // create player and save to DB
         player.name = req.query.player;
+        // TODO: Password needs to be hashed using SHA and a random salt
+        // Salt and hash will be saved in DB
         player.password = req.query.password;
         player.save(req.db, function(err, result) {
             if (err) {
@@ -38,7 +38,7 @@ function register(req, res) {
                 req.logger.logException(err);
                 return res.send(500, { error: err.message });
             }
-            return res.send(200, result);
+            return res.send(200, { success: true });
         });
     });
 }

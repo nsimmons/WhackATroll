@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3955fb20-0b1b-4fda-8f24-9baa4e3deaa4" name="Default" comment="- Added login page&#10;-">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/login.js" />
+    <list default="true" id="3955fb20-0b1b-4fda-8f24-9baa4e3deaa4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/register.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/css/main.css" afterPath="$PROJECT_DIR$/client/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/login.js" afterPath="$PROJECT_DIR$/client/js/login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/main.js" afterPath="$PROJECT_DIR$/client/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/main.html" afterPath="$PROJECT_DIR$/client/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/LoginController.js" afterPath="$PROJECT_DIR$/server/controllers/LoginController.js" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="78" selection-start="231" selection-end="231" vertical-scroll-proportion="-2.2692308">
+            <state line="25" column="14" selection-start="1150" selection-end="1150" vertical-scroll-proportion="-16.346153">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -42,16 +42,18 @@
                 <element signature="n#style#0;n#br#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#br#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#br#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#br#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#br#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#br#5;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/js/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="38" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.19512194">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -59,7 +61,16 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
+            <state line="51" column="37" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistrationController.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/controllers/RegistrationController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="33" selection-start="792" selection-end="792" vertical-scroll-proportion="0.41463414">
               <folding />
             </state>
           </provider>
@@ -84,7 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/node_modules/redis/index.js" />
         <option value="$PROJECT_DIR$/server/utils/Logger.js" />
         <option value="$PROJECT_DIR$/server/errors/NotFoundError.js" />
         <option value="$PROJECT_DIR$/server/models/GameObject.js" />
@@ -93,13 +103,14 @@
         <option value="$PROJECT_DIR$/server/models/Player.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/server/config.js" />
-        <option value="$PROJECT_DIR$/server/controllers/RegistrationController.js" />
-        <option value="$PROJECT_DIR$/server/controllers/LoginController.js" />
         <option value="$PROJECT_DIR$/client/css/main.css" />
         <option value="$PROJECT_DIR$/client/login.html" />
-        <option value="$PROJECT_DIR$/client/js/main.js" />
         <option value="$PROJECT_DIR$/client/main.html" />
         <option value="$PROJECT_DIR$/client/js/login.js" />
+        <option value="$PROJECT_DIR$/client/js/register.js" />
+        <option value="$PROJECT_DIR$/client/js/main.js" />
+        <option value="$PROJECT_DIR$/server/controllers/RegistrationController.js" />
+        <option value="$PROJECT_DIR$/server/controllers/LoginController.js" />
       </list>
     </option>
   </component>
@@ -526,7 +537,11 @@
       <created>1359288490483</created>
       <updated>1359288490483</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- Added login page">
+      <created>1359298542358</created>
+      <updated>1359298542358</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -608,7 +623,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- login and register controllers now support params in query string or post body" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added login page" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -632,10 +647,11 @@
     <MESSAGE value="- Added Redis support." />
     <MESSAGE value="- Added custom logger&#10;- Added support for loading and saving game objects in DB&#10;- Created GameObject base class&#10;- Login and Register controllers are now working properly" />
     <MESSAGE value="- login and register controllers now support params in query string or post body" />
+    <MESSAGE value="- Added login page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="51" />
+      <option name="time" value="55" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -692,13 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/RegistrationController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="2" selection-start="391" selection-end="391" vertical-scroll-proportion="0.56958765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="9" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
@@ -720,9 +729,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="74" selection-start="1858" selection-end="1863" vertical-scroll-proportion="0.61340207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="18" selection-start="1716" selection-end="1716" vertical-scroll-proportion="0.25515464">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/LoginController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="39" selection-start="544" selection-end="544" vertical-scroll-proportion="0.3939394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="78" selection-start="231" selection-end="231" vertical-scroll-proportion="-2.2692308">
+        <state line="25" column="14" selection-start="1150" selection-end="1150" vertical-scroll-proportion="-16.346153">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -732,27 +762,31 @@
             <element signature="n#style#0;n#br#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#br#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#br#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#br#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#br#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#br#5;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/LoginController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="1011" selection-end="1011" vertical-scroll-proportion="1.0953609">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
+        <state line="51" column="37" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/login.js">
+    <entry file="file://$PROJECT_DIR$/server/controllers/RegistrationController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="38" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.19512194">
+        <state line="25" column="33" selection-start="792" selection-end="792" vertical-scroll-proportion="0.41463414">
           <folding />
         </state>
       </provider>

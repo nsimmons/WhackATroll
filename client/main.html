@@ -15,14 +15,34 @@
             <div style="float: left">Password: </div>
             <input id="txt_password" type="password" name="password" style="float: left"/>
             <div id="warn_password"/></div>
-        <br style="clear: both">
-                <span style="float: left">
-                    <input id="btn_login" type="button" value="Login">
-                    <input id="btn_register" type="button" value="Register"/>
-                </span>
-        <div id="warn_login"></div>
-        <br style="clear: both"><br>
+            <br style="clear: both">
+            <span style="float: left">
+                <input id="btn_login" type="button" value="Login">
+                <input id="btn_register" type="button" value="Register"/>
+            </span>
+            <div id="warn_login"></div>
+            <br style="clear: both"><br>
         Note: HTTPS is not supported yet so passwords are sent in the clear. Please use dummy passwords :)
+        </div>
+        <div id="registration" class="hidden">
+            <h1>Registration</h1>
+            <div style="float: left">Username: </div>
+            <input id="txt_new_username" type="text" style="float: left"/>
+            <div id="warn_new_username"></div>
+            <br style="clear: both">
+            <div style="float: left">Password: </div>
+            <input id="txt_new_password" type="password" style="float: left"/>
+            <div id="warn_new_password"/></div>
+            <br style="clear: both">
+            <div style="float: left">Re-enter: </div>
+            <input id="txt_new_password2" type="password" style="float: left"/>
+            <div id="warn_new_password2"/></div>
+            <br style="clear: both">
+            <span style="float: left">
+                <input id="btn_create" type="button" value="Create">
+            </span>
+            <div id="warn_register"></div>
+            <br style="clear: both"><br>
         </div>
         <div id="content" class="hidden">
             <canvas id="screen" width="500" height="500">

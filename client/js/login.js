@@ -5,6 +5,13 @@ define(['jquery'], function($) {
         var warnUsername = false;
         var warnPassword = false;
 
+        // Register handler
+        $('#btn_register').click(function() {
+            // Hide login page and display lobby
+            $('#login').addClass('hidden');
+            $('#registration').removeClass('hidden');
+        });
+
         // Login handler
         $('#btn_login').click(function() {
             var username = $('#txt_username').val();
@@ -36,12 +43,13 @@ define(['jquery'], function($) {
                         $('#txt_password').val('');
                         $('#warn_login').html('Invalid username or password. Try again.');
                     } else {
+                        // Hide login page and display lobby
                         $('#login').addClass('hidden');
-                        $('#content').removeClass('hidden').trigger('visible', {});
+                        $('#content').removeClass('hidden').trigger('start', { player : username });
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    console.log('AJAX call failed: ' + textStatus + ' ' + errorThrown);
+                    $('#warn_login').html('AJAX call failed: ' + textStatus + ' ' + errorThrown);
                 },
                 dataType: "json"
             });

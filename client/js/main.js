@@ -1,5 +1,5 @@
-require(['jquery', 'login', 'ImageLoader', 'Scene', 'object/Troll', 'object/WhackHit', 'util/GuidGenerator', 'lib/async'],
-    function($, login, ImageLoader, Scene, Troll, WhackHit, GuidGenerator, async) {
+require(['jquery', 'login', 'register', 'ImageLoader', 'Scene', 'object/Troll', 'object/WhackHit', 'util/GuidGenerator', 'lib/async'],
+    function($, login, register, ImageLoader, Scene, Troll, WhackHit, GuidGenerator, async) {
 
     var fps = 30;
 	var imageLoader = new ImageLoader();
@@ -8,15 +8,16 @@ require(['jquery', 'login', 'ImageLoader', 'Scene', 'object/Troll', 'object/Whac
 
 	// Wait for the page to be ready
 	$(document).ready( function() {
-        // Setup login page logic
+        // Setup login and register page logic
         login();
-        $('#content').on('visible', function(event) {
+        register();
+        $('#content').on('start', function(event) {
             // Initialize game
-            init();
+            init(event.player);
         });
 	});
 
-    function init() {
+    function init(playerName) {
         // Preload resources
         async.parallel([
             function(callback){
@@ -37,11 +38,11 @@ require(['jquery', 'login', 'ImageLoader', 'Scene', 'object/Troll', 'object/Whac
         ],
         function(err, results){
             // Start game
-            startGame();
+            startGame(playerName);
         });
     }
 
-    function startGame() {
+    function startGame(playerName) {
         // Create the scene
         scene = new Scene();
 
