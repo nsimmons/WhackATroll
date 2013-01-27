@@ -14,6 +14,7 @@ exports = module.exports = function(app) {
 };
 
 function register(req, res) {
+    req.logger.info('/register called');
     // check if player exists
     var player = new Player(req.query.player);
     player.exists(req.db, function(err, result) {

@@ -14,13 +14,14 @@ exports = module.exports = function(app) {
 };
 
 function login(req, res) {
+    req.logger.info('/login called');
     // load player
     var player = new Player(req.query.player);
     player.load(req.db, function(err) {
         if (err) {
             // Return 404 if the player was not found
             if (err.name == 'NotFoundError') {
-                return res.send(404);
+                return res.send(200, { success: false });
             } else {
                 // Otherwise server error (HTTP 500)
                 req.logger.logException(err);
@@ -29,6 +30,6 @@ function login(req, res) {
         }
 
         var responseCode = (req.query.password === player.password) ? 200 : 403;
-        return res.send(responseCode);
+        return res.send(200, { success: true });
     });
 }

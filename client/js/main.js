@@ -1,5 +1,5 @@
-require(['jquery', 'ImageLoader', 'Scene', 'object/Troll', 'object/WhackHit', 'util/GuidGenerator', 'lib/async'],
-    function($, ImageLoader, Scene, Troll, WhackHit, GuidGenerator, async) {
+require(['jquery', 'login', 'ImageLoader', 'Scene', 'object/Troll', 'object/WhackHit', 'util/GuidGenerator', 'lib/async'],
+    function($, login, ImageLoader, Scene, Troll, WhackHit, GuidGenerator, async) {
 
     var fps = 30;
 	var imageLoader = new ImageLoader();
@@ -8,8 +8,12 @@ require(['jquery', 'ImageLoader', 'Scene', 'object/Troll', 'object/WhackHit', 'u
 
 	// Wait for the page to be ready
 	$(document).ready( function() {
-        // Initialize game
-        init();
+        // Setup login page logic
+        login();
+        $('#content').on('visible', function(event) {
+            // Initialize game
+            init();
+        });
 	});
 
     function init() {
