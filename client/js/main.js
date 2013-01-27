@@ -43,10 +43,28 @@ require(['jquery', 'login', 'register', 'ImageLoader', 'Scene', 'object/Troll', 
     }
 
     function joinMatch(playerName) {
-
+        // join a match
+        $.ajax({
+            type: "POST",
+            url: '/match/join',
+            data: {
+                player: playerName
+            },
+            success: function(data) {
+                if (!data.success) {
+                    // TODO: Handle error
+                } else {
+                    startGame(playerName, data.match);
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                // TODO: Handle error
+            },
+            dataType: "json"
+        });
     }
 
-    function startGame(playerName) {
+    function startGame(playerName, matchId) {
         // Create the scene
         scene = new Scene();
 
