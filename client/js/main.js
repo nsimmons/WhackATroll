@@ -38,8 +38,12 @@ require(['jquery', 'login', 'register', 'ImageLoader', 'Scene', 'object/Troll', 
         ],
         function(err, results){
             // Start game
-            startGame(playerName);
+            joinMatch(playerName);
         });
+    }
+
+    function joinMatch(playerName) {
+
     }
 
     function startGame(playerName) {

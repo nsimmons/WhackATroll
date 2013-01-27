@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3955fb20-0b1b-4fda-8f24-9baa4e3deaa4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/js/register.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/controllers/MatchController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/managers/MatchManager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/models/Match.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/login.js" afterPath="$PROJECT_DIR$/client/js/login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/main.js" afterPath="$PROJECT_DIR$/client/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/main.html" afterPath="$PROJECT_DIR$/client/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/LoginController.js" afterPath="$PROJECT_DIR$/server/controllers/LoginController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/RegistrationController.js" afterPath="$PROJECT_DIR$/server/controllers/RegistrationController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config.js" afterPath="$PROJECT_DIR$/server/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/routes.js" afterPath="$PROJECT_DIR$/server/controllers/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/database/db.js" afterPath="$PROJECT_DIR$/server/database/db.js" />
     </list>
     <ignored path="WhackATroll.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,49 +30,49 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="14" selection-start="1150" selection-end="1150" vertical-scroll-proportion="-16.346153">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#br#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#br#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#br#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#br#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#br#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#br#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#br#5;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="37" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
+            <state line="45" column="0" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegistrationController.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/controllers/RegistrationController.js">
+      <file leaf-file-name="MatchController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/controllers/MatchController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="33" selection-start="792" selection-end="792" vertical-scroll-proportion="0.41463414">
+            <state line="20" column="38" selection-start="593" selection-end="619" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatchManager.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/managers/MatchManager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="22" selection-start="469" selection-end="484" vertical-scroll-proportion="-1.6">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/database/db.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="6" selection-start="3023" selection-end="3023" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/node_modules/redis/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="518" column="9" selection-start="16589" selection-end="16589" vertical-scroll-proportion="0.30337077">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,22 +96,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/server/utils/Logger.js" />
-        <option value="$PROJECT_DIR$/server/errors/NotFoundError.js" />
-        <option value="$PROJECT_DIR$/server/models/GameObject.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/server/database/db.js" />
         <option value="$PROJECT_DIR$/server/models/Player.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/server/config.js" />
         <option value="$PROJECT_DIR$/client/css/main.css" />
         <option value="$PROJECT_DIR$/client/login.html" />
         <option value="$PROJECT_DIR$/client/main.html" />
         <option value="$PROJECT_DIR$/client/js/login.js" />
         <option value="$PROJECT_DIR$/client/js/register.js" />
-        <option value="$PROJECT_DIR$/client/js/main.js" />
         <option value="$PROJECT_DIR$/server/controllers/RegistrationController.js" />
         <option value="$PROJECT_DIR$/server/controllers/LoginController.js" />
+        <option value="$PROJECT_DIR$/client/js/main.js" />
+        <option value="$PROJECT_DIR$/server/models/Match.js" />
+        <option value="$PROJECT_DIR$/server/database/db.js" />
+        <option value="$PROJECT_DIR$/server/config.js" />
+        <option value="$PROJECT_DIR$/server/controllers/routes.js" />
+        <option value="$PROJECT_DIR$/server/managers/MatchManager.js" />
+        <option value="$PROJECT_DIR$/server/controllers/MatchController.js" />
       </list>
     </option>
   </component>
@@ -248,6 +249,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="managers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhackATroll" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhackATroll" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="errors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -298,7 +317,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhackATroll" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WhackATroll" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="redis" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -313,10 +350,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -541,7 +574,11 @@
       <created>1359298542358</created>
       <updated>1359298542358</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="- Added registration page">
+      <created>1359300603714</created>
+      <updated>1359300603714</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -623,7 +660,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added login page" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added registration page" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -648,94 +685,14 @@
     <MESSAGE value="- Added custom logger&#10;- Added support for loading and saving game objects in DB&#10;- Created GameObject base class&#10;- Login and Register controllers are now working properly" />
     <MESSAGE value="- login and register controllers now support params in query string or post body" />
     <MESSAGE value="- Added login page" />
+    <MESSAGE value="- Added registration page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="55" />
+      <option name="time" value="73" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/redis/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="26" selection-start="8077" selection-end="8077" vertical-scroll-proportion="0.19160584">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="52" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/Player.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="25" selection-start="283" selection-end="283" vertical-scroll-proportion="0.27272728">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="3" selection-start="462" selection-end="462" vertical-scroll-proportion="0.54545456">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/lib/require-jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="11" selection-start="895" selection-end="895" vertical-scroll-proportion="0.5730337">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="7" selection-start="557" selection-end="557" vertical-scroll-proportion="0.52577317">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="9" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/Scene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="6" selection-start="1" selection-end="7" vertical-scroll-proportion="0.043814432">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/Vector2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="74" selection-start="1858" selection-end="1863" vertical-scroll-proportion="0.61340207">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="18" selection-start="1716" selection-end="1716" vertical-scroll-proportion="0.25515464">
@@ -743,16 +700,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/LoginController.js">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="39" selection-start="544" selection-end="544" vertical-scroll-proportion="0.3939394">
+        <state line="22" column="53" selection-start="759" selection-end="759" vertical-scroll-proportion="0.68248177">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="14" selection-start="1150" selection-end="1150" vertical-scroll-proportion="-16.346153">
+        <state line="25" column="14" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.7943925">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -777,17 +734,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/main.js">
+    <entry file="file://$PROJECT_DIR$/server/models/Player.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="37" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
+        <state line="26" column="41" selection-start="758" selection-end="769" vertical-scroll-proportion="-0.15151516">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/RegistrationController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="33" selection-start="792" selection-end="792" vertical-scroll-proportion="0.41463414">
+        <state line="22" column="41" selection-start="690" selection-end="690" vertical-scroll-proportion="0.27272728">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/LoginController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="9" selection-start="544" selection-end="928" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="28" selection-start="636" selection-end="637" vertical-scroll-proportion="0.61340207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/utils/Logger.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="0" selection-start="4582" selection-end="4582" vertical-scroll-proportion="0.46391752">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="33" selection-start="228" selection-end="228" vertical-scroll-proportion="0.26288658">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/Match.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="9" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/managers/MatchManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="22" selection-start="469" selection-end="484" vertical-scroll-proportion="-1.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="6" selection-start="3023" selection-end="3023" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/MatchController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="38" selection-start="593" selection-end="619" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/redis/lib/to_array.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.043814432">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/redis/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="518" column="9" selection-start="16589" selection-end="16589" vertical-scroll-proportion="0.30337077">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

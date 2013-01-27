@@ -3,6 +3,7 @@
 var express = require('express');
 var DB = require('./database/db.js');
 var Logger = require('./utils/Logger.js');
+var MatchManager = require('./managers/MatchManager.js');
 
 // Create logger
 var logger = new Logger('info');
@@ -10,6 +11,9 @@ var logger = new Logger('info');
 // Create DB connection
 var dbOptions = {};
 var db = new DB(6379, 'ec2-50-19-135-45.compute-1.amazonaws.com', dbOptions, logger);
+
+// Init match manager
+MatchManager.init(db);
 
 // Contains app config
 // Used during app startup

@@ -64,6 +64,28 @@ exports = module.exports = function(port, host, config, logger) {
             return callback(null, true);
         });
     };
+
+    // Adds an item to a queue identified by 'key'
+    this.addToQueue = function(key, toAdd, callback) {
+        // TODO: support conversion of multiple data types
+        return client.rpush(key, toAdd, callback);
+    };
+
+    // Removes an item from a queue identified by 'key'
+    this.removeFromQueue = function(key, callback) {
+        // TODO: support conversion of multiple data types
+        return client.lpop(key, callback);
+    };
+
+    // Increments a counter and returns the new value
+    this.incrementCounter = function(key, callback) {
+        return client.incr(key, callback);
+    };
+
+    // Set the value of a key
+    this.setValue = function(key, value, callback) {
+        return client.set(key, value, callback);
+    };
 };
 
 // Construct db key
@@ -104,7 +126,8 @@ function convertToRedisFields(gameObject, fieldsToSave, dbKeyName) {
                     // Game objects are stored as a reference only
                     objectToSave[fieldName] = '?ref?' + createDbKey(gameObject[fieldName].getType(), gameObject[fieldName].getKey());
                 } else {
-                    //Ignore everything else for now
+                    // Convert object to string
+                    objectToSave[fieldName] = '?obj?' + JSON.stringify(gameObject[fieldName]);
                 }
             }
         }
@@ -139,6 +162,8 @@ function convertFromRedisFields(gameObject, dbResult, fieldsToLoad) {
             } else if (dbResult[fieldName].match('^\\?ref\\?.*')) {
                 fieldValue = dbResult[fieldName].substring(5);
                 // TODO: separate query to load object
+            } else if (dbResult[fieldName].match('^\\?obj\\?.*')) {
+                fieldValue = JSON.parse(dbResult[fieldName].substring(5));
             }
             // Set converted value
             gameObject[fieldName] = fieldValue;
