@@ -1,5 +1,5 @@
-require(['jquery', 'login', 'register', 'ImageLoader', 'Scene', 'object/Troll', 'object/WhackHit', 'util/GuidGenerator', 'lib/async'],
-    function($, login, register, ImageLoader, Scene, Troll, WhackHit, GuidGenerator, async) {
+require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'object/Troll', 'object/WhackHit', 'util/GuidGenerator', 'lib/async'],
+    function($, io, login, register, ImageLoader, Scene, Troll, WhackHit, GuidGenerator, async) {
 
     var fps = 30;
 	var imageLoader = new ImageLoader();
@@ -65,6 +65,13 @@ require(['jquery', 'login', 'register', 'ImageLoader', 'Scene', 'object/Troll', 
     }
 
     function startGame(playerName, matchId) {
+
+        var socket = io.connect('http://localhost');
+        socket.on('startGame', function () {
+            console.log('Start Game!');
+            socket.emit('terminate');
+        });
+
         // Create the scene
         scene = new Scene();
 
