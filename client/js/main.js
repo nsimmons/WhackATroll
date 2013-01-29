@@ -5,6 +5,7 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
 	var imageLoader = new ImageLoader();
     var scene = null;
     var trollKey = 'troll';
+    var ganeLoopIntervalId = null;
 
 	// Wait for the page to be ready
 	$(document).ready( function() {
@@ -36,7 +37,7 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
                 });
             }
         ],
-        function(err, results){
+        function(){
             // Start game
             joinMatch(playerName);
         });
@@ -52,26 +53,40 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
             },
             success: function(data) {
                 if (!data.success) {
-                    // TODO: Handle error
+                    $('#info_text').html('Error joining match.');
                 } else {
-                    startGame(playerName, data.match);
+                    $('#info_text').html('Waiting for all players to join match.');
+                    // Create web socket connection for match play
+                    var socket = io.connect('http://localhost');
+                    configureSocket(socket, playerName, data.match);
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                // TODO: Handle error
+                $('#info_text').html('Error joining match.');
             },
             dataType: "json"
         });
     }
 
-    function startGame(playerName, matchId) {
-
-        var socket = io.connect('http://localhost');
-        socket.on('startGame', function () {
-            console.log('Start Game!');
-            socket.emit('terminate');
+    // Configure socket events
+    function configureSocket(socket, playerName, matchKey) {
+        // Error handler
+        socket.on('error', function (message) {
+            $('#info_text').html('Error connecting to match.');
+            throw new Error(message);
         });
+        // Send the match key when the server asks for it
+        socket.on('getMatch', function () {
+            socket.emit('setMatch', matchKey);
+        });
+        // Event handler fired when all players have connected to the match
+        socket.on('startGame', function () {
+            $('#info_text').html('Match is starting!');
+            startGame(playerName, matchKey);
+        });
+    }
 
+    function startGame(playerName, matchKey) {
         // Create the scene
         scene = new Scene();
 
@@ -86,9 +101,15 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
         replaceTroll();
 
         // Start the game loop
-        setInterval(function() {
-            update();
-            draw();
+        ganeLoopIntervalId = setInterval(function() {
+            try {
+                update();
+                draw();
+            } catch(e) {
+                // If an error occurs stop game loop and report it
+                $('#info_text').html('Error occurred: ' + e.message);
+                clearInterval(ganeLoopIntervalId);
+            }
         }, 1000/fps);
     }
 

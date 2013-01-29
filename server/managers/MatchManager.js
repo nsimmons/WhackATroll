@@ -27,7 +27,7 @@ exports.getAvailableMatch = function(db, callback) {
         }
         // Load the match from the DB
         var match = new Match(matchId);
-        match.load(db, function(err) {
+        return match.load(db, function(err) {
             if (err) {
                 return callback(err);
             }
@@ -52,4 +52,15 @@ exports.createMatch = function (db, callback) {
 // Adds a match to the available queue
 exports.addAvailableMatch = function(db, match, callback) {
     db.addToQueue(matchQueueKey, match.key, callback);
+};
+
+// Connects a player to the match and returns if match is ready to start
+exports.connectToMatch =  function(db, matchKey, callback) {
+    db.incrementCounter('connectedCount:' + matchKey, function(err, connectedCount) {
+        if (err) {
+            return callback(err);
+        }
+        // Return true if all players have connected
+        return callback(null, connectedCount >= 2);
+    });
 };

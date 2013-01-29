@@ -48,7 +48,7 @@ exports = module.exports = function(app) {
     // Initialize socket.io
     // Need to create server object because socket.io does not support Express 3.0 app
     var server = http.createServer(app);
-    socket(server, logger);
+    socket(server, db, logger);
     // Start listening for requests
     server.listen(port);
     logger.info('app listening on port ' + port);
