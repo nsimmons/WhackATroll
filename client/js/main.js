@@ -102,8 +102,8 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
             // Update result of last troll whack
             if (data.player !== null) {
                 // Remove previous troll
-                var previousTroll = scene.getObject(data.trollId - 1);
-                scene.removeObject(data.trollId - 1);
+                var previousTroll = scene.getObject(data.nextId - 1);
+                scene.removeObject(data.nextId - 1);
                 // Draw either WhackHit or WhackMiss depending on if player hit troll first
                 var id = GuidGenerator();
                 if (data.player === playerName) {
@@ -115,13 +115,13 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
                 }
             }
             // Place a troll in the scene randomly
-            var troll = new Troll(data.trollId, 0, 0, scene);
+            var troll = new Troll(data.nextId, 0, 0, scene);
             troll.replace(canvasWidth, canvasHeight);
             // Add troll to scene
-            scene.addObject(data.trollId, troll);
+            scene.addObject(data.nextId, troll);
             // Set click event handler on canvas
             // Curry onCanvasClicked so that e is only param left (to be passed in by event)
-            var curriedHandler = onCanvasClicked.bind(undefined, socket, playerName, data.trollId);
+            var curriedHandler = onCanvasClicked.bind(undefined, socket, playerName, data.nextId);
             jqCanvas.click(curriedHandler);
         });
     }

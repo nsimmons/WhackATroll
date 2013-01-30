@@ -75,7 +75,7 @@ function nextTroll(matchKey, playerName, trollId, io, db, logger) {
                     io.sockets.in(matchKey).emit('error', err.message);
                 }
                 // Send event to clients with new trollId
-                io.sockets.in(matchKey).emit('placeTroll', { nextId: trollId, player: playerName });
+                io.sockets.in(matchKey).emit('placeTroll', { nextId: nextId, player: playerName });
             });
         }
     });

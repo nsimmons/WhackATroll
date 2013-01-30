@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3955fb20-0b1b-4fda-8f24-9baa4e3deaa4" name="Default" comment="">
+    <list default="true" id="3955fb20-0b1b-4fda-8f24-9baa4e3deaa4" name="Default" comment="- Fixed bugs with game sync">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/login.js" afterPath="$PROJECT_DIR$/client/js/login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/main.js" afterPath="$PROJECT_DIR$/client/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/register.js" afterPath="$PROJECT_DIR$/client/js/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/Match.js" afterPath="$PROJECT_DIR$/server/models/Match.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/main.html" afterPath="$PROJECT_DIR$/client/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/socket.js" afterPath="$PROJECT_DIR$/server/socket.js" />
     </list>
     <ignored path="WhackATroll.iws" />
@@ -31,7 +29,7 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="19" selection-start="5226" selection-end="5226" vertical-scroll-proportion="-10.04">
+            <state line="122" column="39" selection-start="4696" selection-end="4696" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -40,16 +38,7 @@
       <file leaf-file-name="socket.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/socket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="7" selection-start="1402" selection-end="1402" vertical-scroll-proportion="0.64498645">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Match.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/Match.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="18" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0">
+            <state line="68" column="28" selection-start="2516" selection-end="2516" vertical-scroll-proportion="0.598916">
               <folding />
             </state>
           </provider>
@@ -74,7 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/client/login.html" />
         <option value="$PROJECT_DIR$/server/controllers/RegistrationController.js" />
         <option value="$PROJECT_DIR$/server/controllers/LoginController.js" />
         <option value="$PROJECT_DIR$/server/database/db.js" />
@@ -82,14 +70,15 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/server/controllers/MatchController.js" />
         <option value="$PROJECT_DIR$/server/config.js" />
-        <option value="$PROJECT_DIR$/client/main.html" />
         <option value="$PROJECT_DIR$/server/managers/MatchManager.js" />
         <option value="$PROJECT_DIR$/client/js/object/Troll.js" />
-        <option value="$PROJECT_DIR$/server/models/Match.js" />
-        <option value="$PROJECT_DIR$/server/socket.js" />
         <option value="$PROJECT_DIR$/client/js/login.js" />
         <option value="$PROJECT_DIR$/client/js/register.js" />
+        <option value="$PROJECT_DIR$/client/js/Scene.js" />
+        <option value="$PROJECT_DIR$/server/models/Match.js" />
         <option value="$PROJECT_DIR$/client/js/main.js" />
+        <option value="$PROJECT_DIR$/server/socket.js" />
+        <option value="$PROJECT_DIR$/client/main.html" />
       </list>
     </option>
   </component>
@@ -317,46 +306,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackATroll" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackATroll" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="object" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackATroll" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhackATroll" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -365,14 +314,14 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="160" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="159" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="160" />
     <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="160" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/static/main.html" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="160" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="834" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="834" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="834" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="160" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="159" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
@@ -420,6 +369,9 @@
       <setting name="preferredDebugBrowser" value="CHROME" />
       <method />
     </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files (x86)/nodejs/node" working-dir="" coffeescript-run="false">
+      <method />
+    </configuration>
     <configuration default="true" type="XSLT" factoryName="XSLT">
       <option name="myOutputFile" />
       <option name="myOpenOutputFile" value="false" />
@@ -434,9 +386,6 @@
       <OutputType value="CONSOLE" save-to-file="false" />
       <FileType name="XML" />
       <JdkChoice value="FROM_MODULE" />
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files (x86)/nodejs/node" working-dir="" coffeescript-run="false">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
@@ -584,7 +533,11 @@
       <created>1359475484693</created>
       <updated>1359475484693</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="- Added game sync between clients (untested)">
+      <created>1359564565507</created>
+      <updated>1359564565507</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -612,7 +565,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32764506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32764506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15636635" sideWeight="0.33390412" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17125838" sideWeight="0.67235494" order="0" side_tool="false" content_ui="combo" />
@@ -666,7 +619,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Fixed match connect logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added game sync between clients (untested)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -697,6 +650,7 @@
     <MESSAGE value="- Create basic socket.io connection" />
     <MESSAGE value="- Added match connect logic (with bugs to fix)" />
     <MESSAGE value="- Fixed match connect logic" />
+    <MESSAGE value="- Added game sync between clients (untested)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -735,9 +689,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/MatchController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="9" selection-start="1548" selection-end="1755" vertical-scroll-proportion="0.4715447">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/database/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="54" selection-start="3747" selection-end="3759" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/managers/MatchManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="18" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.75757575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/object/Troll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.21212122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="82" selection-start="1871" selection-end="1871" vertical-scroll-proportion="0.8787879">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="27" selection-start="349" selection-end="349" vertical-scroll-proportion="-1.4848485">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/Match.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="27" selection-start="738" selection-end="749" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/Scene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="32" selection-start="2161" selection-end="2173" vertical-scroll-proportion="0.6060606">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="39" selection-start="4696" selection-end="4696" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="38" selection-start="2246" selection-end="2246" vertical-scroll-proportion="0.58878505">
+        <state line="2" column="10" selection-start="30" selection-end="30" vertical-scroll-proportion="0.09912536">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -762,72 +779,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/Scene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/object/Troll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="40" selection-start="289" selection-end="289" vertical-scroll-proportion="0.27371272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/MatchController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="9" selection-start="1548" selection-end="1755" vertical-scroll-proportion="0.4715447">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/database/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="54" selection-start="3747" selection-end="3759" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/managers/MatchManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="18" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.75757575">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/Match.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="18" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="56" selection-start="2041" selection-end="2041" vertical-scroll-proportion="2.4495678">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="87" selection-start="1864" selection-end="1876" vertical-scroll-proportion="0.5389049">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="19" selection-start="5226" selection-end="5226" vertical-scroll-proportion="-10.04">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/socket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="7" selection-start="1402" selection-end="1402" vertical-scroll-proportion="0.64498645">
+        <state line="68" column="28" selection-start="2516" selection-end="2516" vertical-scroll-proportion="0.598916">
           <folding />
         </state>
       </provider>
