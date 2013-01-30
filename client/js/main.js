@@ -69,7 +69,7 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
                 } else {
                     infoText.html('Waiting for all players to join match.');
                     // Create web socket connection for match play
-                    var socket = io.connect('http://localhost');
+                    var socket = io.connect('/');
                     configureSocket(socket, playerName, data.match);
                 }
             },
