@@ -59,7 +59,8 @@ define(['util/QuickSort'], function(QuickSort) {
 
     // Get an object from the scene
     Scene.prototype.getObject = function(key) {
-        return this._sceneObjects[key];
+        // Return null if object not found
+        return this._sceneObjects[key] === undefined ? null : this._sceneObjects[key];
     };
 
     // Remove an object from the scene

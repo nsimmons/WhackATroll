@@ -1,5 +1,5 @@
-require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'object/Troll', 'object/WhackHit', 'util/GuidGenerator', 'lib/async'],
-    function($, io, login, register, ImageLoader, Scene, Troll, WhackHit, GuidGenerator, async) {
+require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'object/Troll', 'object/WhackHit', 'object/WhackMiss', 'util/GuidGenerator', 'lib/async'],
+    function($, io, login, register, ImageLoader, Scene, Troll, WhackHit, WhackMiss, GuidGenerator, async) {
 
     var fps = 30;
 	var imageLoader = new ImageLoader();
@@ -96,15 +96,32 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
             infoText.html('Match is starting!');
             startGame();
         });
+        // Event handler for server telling client to place a troll.
+        // Event contains first player that clicked previous troll.
         socket.on('placeTroll', function(data) {
+            // Update result of last troll whack
+            if (data.player !== null) {
+                // Remove previous troll
+                var previousTroll = scene.getObject(data.trollId - 1);
+                scene.removeObject(data.trollId - 1);
+                // Draw either WhackHit or WhackMiss depending on if player hit troll first
+                var id = GuidGenerator();
+                if (data.player === playerName) {
+                    var whackHit = new WhackHit(id, previousTroll.position.x, previousTroll.position.y, scene);
+                    scene.addObject(id, whackHit);
+                } else {
+                    var whackMiss = new WhackMiss(id, previousTroll.position.x, previousTroll.position.y, scene);
+                    scene.addObject(id, whackMiss);
+                }
+            }
             // Place a troll in the scene randomly
-            var troll = new Troll(data.id, 0, 0, scene);
+            var troll = new Troll(data.trollId, 0, 0, scene);
             troll.replace(canvasWidth, canvasHeight);
             // Add troll to scene
-            scene.addObject(data.id, troll);
+            scene.addObject(data.trollId, troll);
             // Set click event handler on canvas
             // Curry onCanvasClicked so that e is only param left (to be passed in by event)
-            var curriedHandler = onCanvasClicked.bind(undefined, socket, playerName, data.id);
+            var curriedHandler = onCanvasClicked.bind(undefined, socket, playerName, data.trollId);
             jqCanvas.click(curriedHandler);
         });
     }
@@ -150,11 +167,7 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
             // Ignore if the object was not a troll
             return;
         }
-        // Place a WhackHit object on the troll's position
-        var id = GuidGenerator();
-        var whackHit = new WhackHit(id, objectHit.position.x, objectHit.position.y, scene);
-        scene.addObject(id, whackHit);
         // Send hit event to server
-        socket.emit('trollHit', { id: trollId, player: playerName });
+        socket.emit('trollHit', { trollId: trollId, player: playerName });
 	}
 });

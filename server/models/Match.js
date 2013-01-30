@@ -21,23 +21,19 @@ Match.prototype.addPlayer = function(playerKey) {
 };
 
 // Get next troll ID
-Match.prototype.getNextTrollIdAndSave = function(db, callback) {
-    // Increment currentTrollId
-    var trollId = ++this.currentTrollId;
-    // Save currentTrollId only
-    this.save(db, function(err) {
-        if (err) {
-            callback(err);
-        }
-        return callback(null, trollId);
-    }, { currentTrollId: 1 });
+Match.prototype.getNextTrollId = function() {
+    // Increment currentTrollId and return
+    return ++this.currentTrollId;
 };
 
-// Updates match score
-Match.prototype.updateScore = function(playerKey, trollIndex) {
-    // Check if player was first to click.
-    // If so, increase score and trollIndex. Then send message to both clients.
-    // Otherwise do nothing.
+// Updates match score if needed. Returns true if player score was changed
+Match.prototype.updateScore = function(playerKey, trollId) {
+    if (trollId !== this.currentTrollId) {
+        // Doesn't match, do not update player score
+        return false
+    }
+    this.playerScore[playerKey]++;
+    return true;
 };
 
 // Loads a match from the DB
