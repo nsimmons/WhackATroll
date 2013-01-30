@@ -119,7 +119,8 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
             troll.replace(canvasWidth, canvasHeight);
             // Add troll to scene
             scene.addObject(data.nextId, troll);
-            // Set click event handler on canvas
+            // Clear and reset click event handler on canvas
+            jqCanvas.unbind('click');
             // Curry onCanvasClicked so that e is only param left (to be passed in by event)
             var curriedHandler = onCanvasClicked.bind(undefined, socket, playerName, data.nextId);
             jqCanvas.click(curriedHandler);
