@@ -8,7 +8,7 @@ var NotFoundError = require('../errors/NotFoundError.js');
 function Match(key) {
     GameObject.call(this, 'match', key);
     this.playerScore = {};
-    this.trollIndex = 0;
+    this.currentTrollId = 0;
 }
 
 util.inherits(Match, GameObject);
@@ -18,6 +18,19 @@ exports = module.exports = Match;
 Match.prototype.addPlayer = function(playerKey) {
     // Set player score
     this.playerScore[playerKey] = 0;
+};
+
+// Get next troll ID
+Match.prototype.getNextTrollIdAndSave = function(db, callback) {
+    // Increment currentTrollId
+    var trollId = ++this.currentTrollId;
+    // Save currentTrollId only
+    this.save(db, function(err) {
+        if (err) {
+            callback(err);
+        }
+        return callback(null, trollId);
+    }, { currentTrollId: 1 });
 };
 
 // Updates match score
@@ -45,7 +58,11 @@ Match.prototype.load = function (db, callback) {
 };
 
 // Save match in DB
-Match.prototype.save = function (db, callback) {
+Match.prototype.save = function (db, callback, fieldsToSave) {
+    // Make sure fieldsToSave is null if not set
+    if (fieldsToSave === undefined) {
+        fieldsToSave = null;
+    }
     var self = this;
     db.saveObject(this, null, function (err, result) {
         if (err) {

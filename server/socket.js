@@ -2,6 +2,7 @@
 
 var socketIO = require('socket.io');
 var MatchManager = require('./managers/MatchManager.js');
+var Match = require('./models/Match.js');
 
 // Contains socket.io configuration
 exports = module.exports = function(app, db, logger) {
@@ -29,12 +30,36 @@ function configureSocket(socket, io, db, logger) {
         MatchManager.connectToMatch(db, matchKey, function(err, startMatch) {
             if (err) {
                 logger.logException(err);
-                socket.emit('error', err.message)
+                io.sockets.in(matchKey).emit('error', err.message);
             }
             // If all players are connected start the match
             if (startMatch) {
                 io.sockets.in(matchKey).emit('startGame');
+                setTimeout(nextTroll, 5000, matchKey, io, db, logger);
             }
+        });
+    });
+    socket.on('trollHit', function (data) {
+        logger.info('trollHit - player: ' + data.player + ' trollId: ' + data.id);
+    });
+}
+
+function nextTroll(matchKey, io, db, logger) {
+    // Load the match from the DB
+    var match = new Match(matchKey);
+    return match.load(db, function(err) {
+        if (err) {
+            logger.logException(err);
+            io.sockets.in(matchKey).emit('error', err.message);
+        }
+        // Get next trollId to send to clients
+        match.getNextTrollIdAndSave(db, function(err, trollId) {
+            if (err) {
+                logger.logException(err);
+                io.sockets.in(matchKey).emit('error', err.message);
+            }
+            // Send event to clients with new trollId
+            io.sockets.in(matchKey).emit('placeTroll', { id: trollId });
         });
     });
 }

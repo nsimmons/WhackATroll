@@ -4,21 +4,33 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
     var fps = 30;
 	var imageLoader = new ImageLoader();
     var scene = null;
-    var trollKey = 'troll';
     var ganeLoopIntervalId = null;
+
+    var jqCanvas = null;
+    var infoText = null;
+    var canvasWidth = null;
+    var canvasHeight = null;
 
 	// Wait for the page to be ready
 	$(document).ready( function() {
+        // Set DOM variables
+        jqCanvas = $('#screen');
+        infoText = $('#info_text');
+        // Get canvas dimensions
+        canvasWidth = jqCanvas.attr('width');
+        canvasHeight = jqCanvas.attr('height');
         // Setup login and register page logic
         login();
         register();
-        $('#content').on('start', function(event) {
+        $('#content').on('start', function(event, player) {
             // Initialize game
-            init(event.player);
+            init(player);
         });
 	});
 
     function init(playerName) {
+        // Create the scene
+        scene = new Scene();
         // Preload resources
         async.parallel([
             function(callback){
@@ -53,16 +65,16 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
             },
             success: function(data) {
                 if (!data.success) {
-                    $('#info_text').html('Error joining match.');
+                    infoText.html('Error joining match.');
                 } else {
-                    $('#info_text').html('Waiting for all players to join match.');
+                    infoText.html('Waiting for all players to join match.');
                     // Create web socket connection for match play
                     var socket = io.connect('http://localhost');
                     configureSocket(socket, playerName, data.match);
                 }
             },
-            error: function(jqXHR, textStatus, errorThrown) {
-                $('#info_text').html('Error joining match.');
+            error: function() {
+                infoText.html('Error joining match.');
             },
             dataType: "json"
         });
@@ -72,7 +84,7 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
     function configureSocket(socket, playerName, matchKey) {
         // Error handler
         socket.on('error', function (message) {
-            $('#info_text').html('Error connecting to match.');
+            infoText.html('Error connecting to match.');
             throw new Error(message);
         });
         // Send the match key when the server asks for it
@@ -81,25 +93,23 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
         });
         // Event handler fired when all players have connected to the match
         socket.on('startGame', function () {
-            $('#info_text').html('Match is starting!');
-            startGame(playerName, matchKey);
+            infoText.html('Match is starting!');
+            startGame();
+        });
+        socket.on('placeTroll', function(data) {
+            // Place a troll in the scene randomly
+            var troll = new Troll(data.id, 0, 0, scene);
+            troll.replace(canvasWidth, canvasHeight);
+            // Add troll to scene
+            scene.addObject(data.id, troll);
+            // Set click event handler on canvas
+            // Curry onCanvasClicked so that e is only param left (to be passed in by event)
+            var curriedHandler = onCanvasClicked.bind(undefined, socket, playerName, data.id);
+            jqCanvas.click(curriedHandler);
         });
     }
 
-    function startGame(playerName, matchKey) {
-        // Create the scene
-        scene = new Scene();
-
-        // Set click event handler on canvas
-        $('#screen').click(onCanvasClicked);
-
-        // Place a troll in the scene
-        var troll = new Troll(trollKey, 0,0, scene);
-        scene.addObject(trollKey, troll);
-
-        // Replace it randomly
-        replaceTroll();
-
+    function startGame() {
         // Start the game loop
         ganeLoopIntervalId = setInterval(function() {
             try {
@@ -107,7 +117,7 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
                 draw();
             } catch(e) {
                 // If an error occurs stop game loop and report it
-                $('#info_text').html('Error occurred: ' + e.message);
+                infoText.html('Error occurred: ' + e.message);
                 clearInterval(ganeLoopIntervalId);
             }
         }, 1000/fps);
@@ -120,49 +130,31 @@ require(['jquery', 'socket.io', 'login', 'register', 'ImageLoader', 'Scene', 'ob
 
     function draw() {
         // Get canvas dimensions
-        var jqCanvas = $('#screen');
         var canvasWidth = jqCanvas.attr('width');
         var canvasHeight = jqCanvas.attr('height');
-
         // Clear the canvas
         var ctx = jqCanvas[0].getContext('2d');
 		ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-
         // Redraw the scene
         scene.draw(ctx);
     }
 
-    // Places troll randomly on canvas
-    function replaceTroll() {
-        // Get canvas dimensions
-        var jqCanvas = $('#screen');
-        var canvasWidth = jqCanvas.attr('width');
-        var canvasHeight = jqCanvas.attr('height');
-
-        // Place it randomly in the scene
-        var troll = scene.getObject(trollKey);
-        troll.replace(canvasWidth, canvasHeight);
-    }
-
-	function onCanvasClicked(e) {
+	function onCanvasClicked(socket, playerName, trollId, e) {
 		// Get click location relative to canvas
         var canvasOffset = $("#screen").offset();
         var x = Math.floor((e.pageX-canvasOffset.left));
 		var y = Math.floor((e.pageY-canvasOffset.top));
-
-        // if troll was not hit, ignore
+        // If troll was not hit, ignore
         var objectHit = scene.getObjectHit(x, y);
-        if (objectHit !== scene.getObject(trollKey)) {
+        if (!(objectHit instanceof Troll)) {
+            // Ignore if the object was not a troll
             return;
         }
-
-        // place a WhackHit object on the troll's position
-        var troll = scene.getObject(trollKey);
+        // Place a WhackHit object on the troll's position
         var id = GuidGenerator();
-        var whackHit = new WhackHit(id, troll.position.x, troll.position.y, scene);
+        var whackHit = new WhackHit(id, objectHit.position.x, objectHit.position.y, scene);
         scene.addObject(id, whackHit);
-
-        // replace the troll
-        replaceTroll();
+        // Send hit event to server
+        socket.emit('trollHit', { id: trollId, player: playerName });
 	}
 });

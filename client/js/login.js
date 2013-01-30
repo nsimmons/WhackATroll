@@ -45,7 +45,7 @@ define(['jquery'], function($) {
                     } else {
                         // Hide login page and display lobby
                         $('#login').addClass('hidden');
-                        $('#content').removeClass('hidden').trigger('start', { player : username });
+                        $('#content').removeClass('hidden').trigger('start', [username]);
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
